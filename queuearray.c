@@ -24,6 +24,20 @@ void enQ(Queue *q,int x)
         q->head = 1;
 }
 
+void enQ_front(Queue *q,int x)
+{
+    if(q->head == 1)
+        printf("Cannot enQ_front");
+        return;
+    if(q->head == 0)
+    {
+        q->a[1]=x;
+        q->head = q->tail =  1;
+        return;
+    }
+    q->a[--q->head]=x;
+}
+
 void deQ(Queue *q)
 {
     if(q->head < q->tail)
