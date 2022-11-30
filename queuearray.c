@@ -27,8 +27,10 @@ void enQ(Queue *q,int x)
 void enQ_front(Queue *q,int x)
 {
     if(q->head == 1)
+    {
         printf("Cannot enQ_front");
         return;
+    }
     if(q->head == 0)
     {
         q->a[1]=x;
