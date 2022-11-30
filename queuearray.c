@@ -40,6 +40,21 @@ void enQ_front(Queue *q,int x)
     q->a[--q->head]=x;
 }
 
+void enQ_priority(Queue* q, int x)
+{   
+    int i;
+    if(q->tail < q->size)
+    {
+        i = q->tail++;
+        while(i > 0 && q->a[i] > x)
+            q->a[i+1] = q->a[i--];
+        q->a[i+1] = x;
+
+        if (q->head == x)
+            q->head = 1;
+    }
+}
+
 void deQ(Queue *q)
 {
     if(q->head < q->tail)
