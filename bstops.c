@@ -136,6 +136,36 @@ bst* Remove(bst* t,int x)
     }
 }
 
+void inorder(bst* root)
+{
+  if (root)
+  {
+    inorder(root->left);
+    printf("%d ", root->data);
+    inorder(root->right);
+  }
+}
+
+void preorder(bst* root)
+{
+  if (root)
+  {
+    printf("%d ", root->data);
+    preorder(root->left);
+    preorder(root->right);
+  }
+}
+
+void postorder(bst* root)
+{
+  if (root)
+  {
+    postorder(root->left);
+    postorder(root->right);
+    printf("%d ", root->data);
+  }
+}
+
 void main()
 {
     bst *t=NULL;
